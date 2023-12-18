@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Practices\\AzureFunctionPractice\\HelloToDotnet\\HelloToDotnet\\HelloToDotnet.csproj": {}
+    "D:\\Practices\\HelloDotnet\\HelloToDotnet\\HelloToDotnet.csproj": {}
   },
   "projects": {
-    "D:\\Practices\\AzureFunctionPractice\\HelloToDotnet\\HelloToDotnet\\HelloToDotnet.csproj": {
+    "D:\\Practices\\HelloDotnet\\HelloToDotnet\\HelloToDotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Practices\\AzureFunctionPractice\\HelloToDotnet\\HelloToDotnet\\HelloToDotnet.csproj",
+        "projectUniqueName": "D:\\Practices\\HelloDotnet\\HelloToDotnet\\HelloToDotnet.csproj",
         "projectName": "HelloToDotnet",
-        "projectPath": "D:\\Practices\\AzureFunctionPractice\\HelloToDotnet\\HelloToDotnet\\HelloToDotnet.csproj",
+        "projectPath": "D:\\Practices\\HelloDotnet\\HelloToDotnet\\HelloToDotnet.csproj",
         "packagesPath": "C:\\Users\\WB\\.nuget\\packages\\",
-        "outputPath": "D:\\Practices\\AzureFunctionPractice\\HelloToDotnet\\HelloToDotnet\\obj\\",
+        "outputPath": "D:\\Practices\\HelloDotnet\\HelloToDotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WB\\AppData\\Roaming\\NuGet\\NuGet.Config",

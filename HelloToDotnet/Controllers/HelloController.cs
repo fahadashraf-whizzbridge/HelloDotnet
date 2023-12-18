@@ -8,36 +8,22 @@ namespace HelloToDotnet.Controllers
     [Route("[controller]")]
     public class HelloController : ControllerBase
     {
-        [HttpGet("/get-hello")]
-        public string GetHelloWorld()
-        {
-            HelloService hs = new HelloService();
-            return "Hello World " + hs.GetDateTimeString();
-        }
+        private HelloService _helloService;
+		private readonly ByeService _byeService;
 
-        // query string
-        // premitive types
-        // int, string, boolean, float, objects 🚫
-        [HttpGet("/get-hello/{id}/{name}")]
-        public string GetHelloWorld(string id, string name)
+		public HelloController(HelloService helloService, ByeService byeService)
         {
-            HelloService hs = new HelloService();
-            return "Hello World " + id + " " + name + hs.GetDateTimeString();
-        }
+            _helloService = helloService;
+			_byeService = byeService;
+		}
 
-        [HttpPost("/get-hello-post")]
-        public string GetHelloWorldPost([FromBody] Person person)
+        
+        [HttpGet("/testing-deps")]
+        public string TestingDeps()
         {
-            return "Hello World Post " + person.Name;
-        }
 
-        [HttpGet("/get-hello-list")]
-        public List<string> GetHelloWorldList()
-        {
-            return new List<string> {
-            "Hello",
-            "World"
-            };
+            _byeService.SayBye();
+			return "Hello World " + _helloService.GetDateTimeString();
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "0eUNJi3GUJuIjYIqc0Jkn11EenW006uhXiJZznGcVn4=",
-  "Source": "HelloToDotnet",
-  "BasePath": "_content/HelloToDotnet",
+  "Hash": "i9d+wRnRvTy1cjMKBH3dUYY7+rgf1+BEObQcXwzom5Y=",
+  "Source": "RESTCore",
+  "BasePath": "_content/RESTCore",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

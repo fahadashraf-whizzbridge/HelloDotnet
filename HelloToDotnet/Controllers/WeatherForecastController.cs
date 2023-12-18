@@ -7,14 +7,21 @@ namespace HelloToDotnet.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+		private readonly HelloService _helloService;
+
+		public WeatherForecastController(HelloService helloService)
+        {
+			_helloService = helloService;
+		}
+
+		private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+		public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
@@ -34,8 +41,7 @@ namespace HelloToDotnet.Controllers
         [HttpGet("test-timestamp")]
         public string TestTimestamp()
         {
-            HelloService hs = new HelloService();
-            return "hello timestamp" + hs.GetDateTimeString();
+            return "hello timestamp" + _helloService.GetDateTimeString();
         }
     }
 }

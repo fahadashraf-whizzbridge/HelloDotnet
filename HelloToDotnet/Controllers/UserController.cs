@@ -1,5 +1,5 @@
-﻿using Common.Model;
-using HelloToDotnet.Services;
+﻿using Common.DTOs;
+using Common.Model;
 using Microsoft.AspNetCore.Mvc;
 using RESTCore.Services;
 
@@ -16,10 +16,31 @@ namespace RESTCore.Controllers
 			_userService = userService;
 		}
 
+		[HttpGet("/all-by-name/{name}")]
+		public List<UserDTO> GetAllByName(string name)
+		{
+			return _userService.GetAllByName(name);
+		}
+
 		[HttpGet("/users")]
-		public List<User> GetAll()
+		public List<UserDTO> GetAll()
 		{
 			return _userService.GetAll();
 		}
+
+		[HttpGet("/users/{id}")]
+		public UserDTO GetOne(string id)
+		{
+			return _userService.GetOne(id);
+		}
+
+
+		[HttpPost("/users")]
+		public bool GetAll([FromBody] UserDTO userDTO)
+		{
+			return _userService.AddUser(userDTO);
+		}
+
+
 	}
 }

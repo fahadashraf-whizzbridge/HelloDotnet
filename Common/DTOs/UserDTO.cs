@@ -1,6 +1,6 @@
-﻿namespace Common.Model
+﻿namespace Common.DTOs
 {
-	public class User : BaseEntity
+	public class UserDTO : BaseDTO
 	{
 		public string Name { get; set; }
 		public string Designation { get; set; }

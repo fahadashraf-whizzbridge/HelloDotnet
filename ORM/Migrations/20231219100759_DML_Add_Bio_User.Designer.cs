@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ORM.DatabaseContext;
 
@@ -10,9 +11,10 @@ using ORM.DatabaseContext;
 namespace ORM.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231219100759_DML_Add_Bio_User")]
+    partial class DML_Add_Bio_User
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,27 +23,6 @@ namespace ORM.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Common.Model.Todo", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)");
-
-                    b.Property<string>("AssignedToId")
-                        .HasColumnType("nvarchar(36)");
-
-                    b.Property<string>("Task")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AssignedToId");
-
-                    b.ToTable("Todos");
-                });
-
             modelBuilder.Entity("Common.Model.User", b =>
                 {
                     b.Property<string>("Id")
@@ -49,7 +30,7 @@ namespace ORM.Migrations
                         .HasMaxLength(36)
                         .HasColumnType("nvarchar(36)");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Bio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -64,15 +45,6 @@ namespace ORM.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Common.Model.Todo", b =>
-                {
-                    b.HasOne("Common.Model.User", "AssignedTo")
-                        .WithMany()
-                        .HasForeignKey("AssignedToId");
-
-                    b.Navigation("AssignedTo");
                 });
 #pragma warning restore 612, 618
         }

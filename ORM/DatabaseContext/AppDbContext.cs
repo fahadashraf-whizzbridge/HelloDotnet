@@ -49,7 +49,6 @@ namespace ORM.DatabaseContext
 			}
 		}
 		public virtual DbSet<User> Users { get; set; }
-		public virtual DbSet<ToDoList> ToDoLists { get; set; }
-		public virtual DbSet<ToDoUserMapping> ToDoUserMappings { get; set; }
+		public virtual DbSet<Todo> Todos { get; set; }
 	}
 }
